@@ -40,6 +40,5 @@ def lowercase():  # convertie en minuscule
             data = file.read()
             new = open(f'modif/{A[i]}', 'w+', encoding='utf-8')
             new.write(data.lower())
-            d
-
+    
 
