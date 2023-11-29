@@ -1,4 +1,10 @@
 import os
+def list_of_files(directory, extension):
+    files_names = []
+    for filename in os.listdir(directory):
+        if filename.endswith(extension):
+            files_names.append(filename)
+    return files_names
 
 def extract_names(filename: str) -> str:
     # etraire nom des présidents des fichiers
@@ -40,5 +46,5 @@ def lowercase():  # convertie en minuscule
             data = file.read()
             new = open(f'modif/{A[i]}', 'w+', encoding='utf-8')
             new.write(data.lower())
-    
+
 
