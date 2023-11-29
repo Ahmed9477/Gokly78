@@ -1,4 +1,5 @@
 import os
+
 def list_of_files(directory, extension):
     files_names = []
     for filename in os.listdir(directory):
@@ -45,6 +46,5 @@ def lowercase():  # convertie en minuscule
         with open(f'speeches/{A[i]}', 'r+', encoding='utf-8') as file:
             data = file.read()
             new = open(f'modif/{A[i]}', 'w+', encoding='utf-8')
-            new.write(data.lower())
 
 
