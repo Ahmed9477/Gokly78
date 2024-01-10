@@ -1,6 +1,9 @@
 import os
 import string
 
+
+main.menu()
+
 def list_of_files(directory, extension):
     speeches = []
     for filename in os.listdir(directory):
@@ -102,4 +105,6 @@ if __name__ == "__main__":
         output_path = os.path.join(cleaned_directory, filename)
 
         ponctuationc(input_path, output_path)
+
+
 

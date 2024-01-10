@@ -136,7 +136,47 @@ mots_repetes_chirac = mots_plus_repetes_chirac(resultat_calculer_tf, mots_moins_
 print("Mots les plus répétés par Chirac (hors mots non importants):", mots_repetes_chirac)
 
 
+def main_menu():
+    while True:
+        print("\nMenu de Traitement des Discours Présidentiels")
+        print("1. Lister tous les fichiers")
+        print("2. Lister les noms des présidents")
+        print("3. Convertir les fichiers en minuscules")
+        print("4. Associer le prénom du président à son nom")
+        print("5. Supprimer la ponctuation d'un fichier")
+        print("6. Quitter")
 
+        choice = input("Entrez votre choix (1-6) : ")
 
+        if choice == '1':
+            directory = input("Entrez le chemin du répertoire : ")
+            extension = input("Entrez l'extension de fichier (ex. : .txt) : ")
+            files = list_of_files(directory, extension)
+            print_list(files)
 
+        elif choice == '2':
+            folder = input("Entrez le chemin du dossier : ")
+            names = nompresliste(folder)
+            print("Noms des Présidents :", names)
 
+        elif choice == '3':
+            lowercase()
+            print("Les fichiers ont été convertis en minuscules.")
+
+        elif choice == '4':
+            last_name = input("Entrez le nom de famille du président : ")
+            first_name = prenomassocier(last_name)
+            print("Prénom :", first_name)
+
+        elif choice == '5':
+            input_path = input("Entrez le chemin du fichier à nettoyer : ")
+            output_path = input("Entrez le chemin pour sauvegarder le fichier nettoyé : ")
+            ponctuationc(input_path, output_path)
+            print("Le fichier a été nettoyé de la ponctuation.")
+
+        elif choice == '6':
+            print("Sortie du programme.")
+            break
+
+        else:
+            print("Choix invalide. Veuillez entrer un nombre entre 1 et 6.")
